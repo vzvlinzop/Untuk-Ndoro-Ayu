@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        
+        h1, h2, .name {
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        
+        h1 {
+            font-size: 5vw;
+            color: #ff0066;
+            animation-delay: 0.5s;
+        }
+        
+        h2 {
+            font-size: 6vw;
+            font-weight: bold;
+            color: #ff0066;
+            animation-delay: 1s;
+        }
+        
+        .name {
+            font-size: 5vw;
+            font-weight: bold;
+            margin-top: 10vh;
+            animation-delay: 1.5s;
+        }
+        
+        .button-container {
+            margin-top: 20px;
+            animation: fadeIn 2s ease-in-out forwards;
+            animation-delay: 2s;
+        }
+        
+        .next-button {
+            font-size: 2vw;
+            padding: 1vw 2vw;
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .next-button:hover {
+            background-color: #cc0052;
+        }
+        
+        .balloon-container, .love-container, .star-container {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            bottom: -100px;
+            animation: floatUpFade 5s linear infinite;
+            z-index: -1;
+        }
+        
+        .curved-string {
+            width: 2px;
+            height: 10vh;
+            position: absolute;
+            bottom: -90px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 2px solid black;
+            border-radius: 20px;
+        }
+        
+        .balloon, .love, .star {
+            width: 5vw;
+            height: 7vw;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .love {
+            width: 4vw;
+            height: 4vw;
+            background-color: pink;
+            clip-path: polygon(50% 80%, 100% 35%, 80% 0%, 50% 20%, 20% 0%, 0% 35%);
+        }
+        
+        .star {
+            width: 3vw;
+            height: 3vw;
+            background-color: yellow;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes floatUpFade {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-800px); opacity: 0; }
+        }
+
+        .music-button {
+            margin-top: 40px;
+            font-size: 1.5vw;
+            padding: 1vw 2vw;
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .music-button:hover {
+            background-color: #cc0052;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Birthday! 🎉🎂</h1>
+    <h2>Ndoro Ayuu</h2>
+    <div class="button-container">
+        <button class="next-button" onclick="location.href='Halaman2.html'">Halaman Berikutnya</button>
+    </div>
+
+    <audio id="bg-music" loop>
+        <source src="happylagu.mp3" type="audio/mpeg">
+    </audio>
+    <button class="music-button" onclick="document.getElementById('bg-music').play()">Play Music</button>
+
+    <script>
+        function createFloatingElements() {
+            let types = ['balloon', 'love', 'star'];
+            let type = types[Math.floor(Math.random() * types.length)];
+            
+            let container = document.createElement("div");
+            container.className = type + "-container";
+            container.style.left = Math.random() * window.innerWidth + "px";
+
+            let element = document.createElement("div");
+            element.className = type;
+            
+            if (type === 'balloon') {
+                let string = document.createElement("div");
+                string.className = "curved-string";
+                element.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 60%)`;
+                container.appendChild(string);
+            }
+            
+            container.appendChild(element);
+            document.body.appendChild(container);
+            
+            setTimeout(() => container.remove(), 5000);
+        }
+        function createLove() {
+    for (let i = 0; i < 5; i++) {
+        let loveContainer = document.createElement("div");
+        loveContainer.className = "love-container";
+        loveContainer.style.left = Math.random() * window.innerWidth + "px";
+        
+        let love = document.createElement("div");
+        love.className = "love";
+        
+        loveContainer.appendChild(love);
+        document.body.appendChild(loveContainer);
+        
+        setTimeout(() => loveContainer.remove(), 6000);
+    }
+}
+        setInterval(createFloatingElements, 500);
+    </script>
+</body>
+</html>

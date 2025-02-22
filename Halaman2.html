@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 2 - Slideshow</title>
+    <style>
+        body {
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 90%;
+            margin: auto;
+            overflow: hidden;
+            background: rgba(220, 90, 90, 0.2);
+            padding: 100px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .text {
+            color: white;
+            font-size: 18px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            display: inline-block;
+            border-radius: 5px;
+        }
+        .music-button-container {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .music-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #ff0066;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .music-button:hover {
+            background-color: #cc0052;
+        }
+        @media (max-width: 600px) {
+            .text {
+                font-size: 14px;
+            }
+            .slideshow-container {
+                flex-direction: column;
+            }
+            img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+        .love-container {
+            position: absolute;
+            bottom: -100px;
+            width: 40px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            animation: floatUp 6s linear infinite;
+        }
+        .love {
+            width: 30px;
+            height: 30px;
+            background-color: pink;
+            clip-path: polygon(50% 80%, 100% 35%, 80% 0%, 50% 20%, 20% 0%, 0% 35%);
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-800px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <h1>Happy Birthday Buat Orang Spesial❤️‍🔥❤️‍🔥</h1>
+    <div class="slideshow-container">
+        <div class="slide active">
+            <img src="foto1.jpg" alt="Foto 1">
+            <div class="text">Momen pertama yang paling indah, pertamakali aku melihat kamu begitu menawan di mataku, orang yang paling spesial di kehidupanku </div>
+        </div>
+        <div class="slide">
+            <img src="foto2.jpg" alt="Foto 2">
+            <div class="text">Rambut yang begitu indah, layaknya seorang putri, begitu indah rambutmu sampai memanjakan mataku </div>
+        </div>
+        <div class="slide">
+            <img src="foto3.jpg" alt="Foto 3">
+            <div class="text">happy birthday, ndoroo ayuuu ! hari ini spesial banget, karena ini hari dimana seseorang yang paling berarti di hidupku lahir</div>
+        </div>
+        <div class="slide">
+            <img src="foto4.jpg" alt="Foto 4">
+            <div class="text">Canda dan tawa bersama, aku nggak bisa bilang betapa bersyukurnya aku bisa kenal kamu dan ngelewatin hari-hari bareng</div>
+        </div>
+        <div class="slide">
+            <img src="foto5.jpg" alt="Foto 5">
+            <div class="text">pendengar yang paling setia, dan orang yang selalu bikin aku ngerasa nyaman dan dicintai</div>
+        </div>
+        <div class="slide">
+            <img src="foto6.jpg" alt="Foto 6">
+            <div class="text">semoga di usia yang baru ini, kamu selalu dikelilingi hal-hal baik, makin sukses dalam semua hal yang kamu lakuin, dan tentunya sehat selalu</div>
+        </div>
+        <div class="slide">
+            <img src="foto7.jpg" alt="Foto 7">
+            <div class="text">aku juga berdoa biar kita bisa terus bareng-bareng ngelewatin segala suka-duka</div>
+        </div>
+        <div class="slide">
+            <img src="foto8.jpg" alt="Foto 8">
+            <div class="text">saling support, saling jaga, dan makin dekat satu sama lain</div>
+        </div>
+        <div class="slide">
+            <img src="foto9.jpg" alt="Foto 9">
+            <div class="text">makasih udah selalu ada buat aku, sayang</div>
+        </div>
+        <div class="slide">
+            <img src="foto10.jpg" alt="Foto 10">
+            <div class="text">Cerita yang terus berlanjut, terimakasih sudah hadir di kehidupanku, kamu tuh hadiah terbaik buat hidup aku. selamat ulang tahun ya, untung orang yang spesial ! love u ❤️‍🔥 [ini paling lucuuu -atmin ] </div>
+        </div>
+    </div>
+    <div class="music-button-container">
+        <button class="music-button" onclick="document.getElementById('bg-music').play()">Play Music</button>
+    </div>
+    <audio id="bg-music" loop>
+        <source src="Cipa.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1;}
+            slides[slideIndex - 1].classList.add("active");
+            setTimeout(showSlides, 6000);
+        }
+        showSlides();
+
+        function createLove() {
+    for (let i = 0; i < 5; i++) {
+        let loveContainer = document.createElement("div");
+        loveContainer.className = "love-container";
+        loveContainer.style.left = Math.random() * window.innerWidth + "px";
+        
+        let love = document.createElement("div");
+        love.className = "love";
+        
+        loveContainer.appendChild(love);
+        document.body.appendChild(loveContainer);
+        
+        setTimeout(() => loveContainer.remove(), 6000);
+    }
+}
+    </script>
+</body>
+</html>

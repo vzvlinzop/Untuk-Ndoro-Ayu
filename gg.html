@@ -1,0 +1,15 @@
+function createLove() {
+    for (let i = 0; i < 5; i++) {
+        let loveContainer = document.createElement("div");
+        loveContainer.className = "love-container";
+        loveContainer.style.left = Math.random() * window.innerWidth + "px";
+        
+        let love = document.createElement("div");
+        love.className = "love";
+        
+        loveContainer.appendChild(love);
+        document.body.appendChild(loveContainer);
+        
+        setTimeout(() => loveContainer.remove(), 6000);
+    }
+}
